@@ -1,0 +1,17 @@
+.parallax-container {
+    height: 100vh;
+    perspective: 1px; /* Key to parallax depth */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.base { transform: translateZ(0); }
+.background { transform: translateZ(-1px) scale(2); }
