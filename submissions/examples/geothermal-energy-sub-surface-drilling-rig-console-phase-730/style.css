@@ -1,0 +1,27 @@
+:root {
+    --rig-orange: #ff8c00;
+    --dark-bg: #121212;
+}
+
+body { background: var(--dark-bg); color: #e0e0e0; font-family: 'Courier New', monospace; }
+
+.console-wrapper { padding: 20px; border: 2px solid var(--rig-orange); }
+
+.bar-fill {
+    height: 20px;
+    background: var(--rig-orange);
+    width: 60%;
+    animation: scan 2s infinite alternate;
+}
+
+@keyframes scan {
+    from { width: 40%; opacity: 0.5; }
+    to { width: 90%; opacity: 1; }
+}
+
+.slow-pulse { animation: pulse 3s infinite; }
+
+@keyframes pulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(2); }
+}
