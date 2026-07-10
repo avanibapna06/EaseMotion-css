@@ -1,0 +1,36 @@
+/* Reset & Layout */
+.hidden { display: none; }
+.accordion-wrapper { width: 320px; font-family: sans-serif; }
+
+.accordion-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+}
+
+.accordion-header {
+    display: block; padding: 15px; cursor: pointer; color: white;
+    font-weight: bold; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-content {
+    max-height: 0; padding: 0 15px;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
+    color: #e0e0e0;
+}
+
+/* Neon Glow Effect on Check */
+#accordion-1:checked ~ .accordion-header { color: #00f3ff; }
+
+#accordion-1:checked ~ .accordion-content {
+    max-height: 100px; padding: 15px;
+}
+
+#accordion-1:checked ~ .accordion-item,
+#accordion-1:checked + .accordion-header + .accordion-content {
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+}
