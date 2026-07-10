@@ -1,0 +1,20 @@
+.hidden { display: none; }
+.btn { cursor: pointer; padding: 10px 20px; background: #333; color: #fff; border-radius: 5px; }
+
+.modal-overlay { 
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+    display: flex; justify-content: center; align-items: center;
+    /* Initial state: small circle hidden in the center */
+    transform: scale(0); border-radius: 50%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.6s;
+    pointer-events: none;
+}
+
+/* State change on check */
+#modal-trigger:checked ~ .modal-overlay { 
+    transform: scale(1); border-radius: 0; 
+    pointer-events: auto;
+}
+
+.modal-content { background: #fff; padding: 40px; border-radius: 8px; text-align: center; }
+.close-btn { cursor: pointer; color: red; font-weight: bold; }
